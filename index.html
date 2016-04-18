@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Platzi de ReactJS</title>
+</head>
+<body>
+	<section id="container"></section>
+	<script src="http://fb.me/react-0.13.3.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+	<script type="text/jsx;harmony=true">
+		/* Old syntax */
+		/* var HelloWorldComponent = React.createClass({
+			render: function() {
+				return <h1>Hello { this.props.name }</h1>
+			}
+		});
+		React.render(<HelloWorldComponent name="Valverde" />, document.getElementById("container")); */
+
+		/* ES6 */
+		class HelloWorldComponent extends React.Component {
+			render() {
+				return <h1>{ this.props.name } tiene { this.props.age }</h1>
+			}
+		}
+		HelloWorldComponent.propTypes = {
+			name: React.PropTypes.string,
+			age: React.PropTypes.number
+		};
+		React.render(<HelloWorldComponent name="Valverde" />, document.getElementById("container"));
+
+		setTimeout(() => {
+			React.render(<HelloWorldComponent name="Alberto" age={29} />, document.getElementById("container"));
+		}, 3000)
+	</script>
+</body>
+</html>
