@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Platzi de ReactJS</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="app" ng-controller="user_ctrl as sesion">
+    <form>
+        <fieldset>
+            <legend>¿Como te llamas?</legend>
+            <input type="text" ng-model="sesion.usuario.nombre"   placeholder="Nombre"/>
+            <input type="text" ng-model="sesion.usuario.apellido" placeholder="Apellido(s)"/>
+        </fieldset>
+    </form>
+    <usuario nombre="sesion.usuario.nombre" apellido="sesion.usuario.apellido"/>
+
+	
+	<script src="bower_components/react/react.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/ngReact/ngReact.min.js"></script>
+	<script type="text/jsx;harmony=true" src="list.jsx"></script>
+</body>
+</html>
